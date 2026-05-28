@@ -23,7 +23,7 @@
     <div id="screen-main" class="screen">
         <div class="header">
             <h1 class="greeting">Доброго времени суток</h1>
-            <p>Что бы вы хотели сегодня выбрать?</p>
+            <p>What бы вы хотели сегодня выбрать?</p>
         </div>
         <div class="buttons">
             <button onclick="navigate('screen-fun')">Развлечения</button>
@@ -125,6 +125,7 @@
         <div id="auth-view-profile" class="modal-content auth-box hidden">
             <div class="auth-title" id="profile-greeting">Привет!</div>
             <p style="font-size: 14px; color: #7D9C87; text-align: center; margin-bottom: 20px;">Вы авторизованы.</p>
+            <button id="btn-admin-panel-link" class="btn-secondary hidden" onclick="openAdminPanel()" style="width: 100%; margin-bottom: 10px; background-color: #FAF0A5; color: #0A170F;">Панель администратора</button>
             <button class="btn-primary" onclick="openCalendar('view')" style="width: 100%; margin-bottom: 10px;">Посмотреть планы</button>
             <button class="btn-danger" onclick="handleLogout()" style="width: 100%;">Выйти</button>
         </div>
@@ -213,38 +214,38 @@
             <div id="multi-calendar-grid" class="calendar-days"></div>
             
             <div class="calendar-footer" style="margin-top:20px;">
-                <button id="btn-reset-date" onclick="closeModal('multi-calendar-modal')">Отмена</button>
-                <button id="btn-save-date" onclick="confirmMultiDateSelection()">Подтвердить</button>
+                <button class="btn-secondary" onclick="closeModal('multi-calendar-modal')">Отмена</button>
+                <button id="btn-save-multi-date" class="btn-primary" onclick="confirmMultiDateSelection()">Подтвердить</button>
             </div>
         </div>
     </div>
-<div id="admin-modal" class="modal-overlay hidden">
-    <div class="modal-content admin-dashboard">
-        <div class="admin-header">
-            <h2>Панель управления администратора</h2>
-            <span class="close-btn" onclick="closeModal('admin-modal')">&times;</span>
-        </div>
-        
-        <div class="admin-stats-grid">
-            <div class="admin-stat-card">
-                <span class="stat-label">Зарегистрировано пользователей</span>
-                <span id="stat-total-users" class="stat-number">0</span>
-            </div>
-            <div class="admin-stat-card">
-                <span class="stat-label">Всего запланировано событий</span>
-                <span id="stat-total-events" class="stat-number">0</span>
-            </div>
-        </div>
 
-        <div class="admin-search-wrapper">
-            <input type="text" id="admin-search-input" placeholder="Поиск пользователя по имени или @логину..." oninput="filterAdminUsers()">
-        </div>
-
-        <div id="admin-data-container" class="admin-users-list">
+    <div id="admin-modal" class="modal-overlay hidden" onclick="closeModal('admin-modal')">
+        <div class="modal-content admin-dashboard" onclick="event.stopPropagation()">
+            <div class="admin-header">
+                <h2>Панель управления администратора</h2>
+                <span class="close-btn" onclick="closeModal('admin-modal')">&times;</span>
             </div>
+            
+            <div class="admin-stats-grid">
+                <div class="admin-stat-card">
+                    <span class="stat-label">Зарегистрировано пользователей</span>
+                    <span id="stat-total-users" class="stat-number">0</span>
+                </div>
+                <div class="admin-stat-card">
+                    <span class="stat-label">Всего запланировано событий</span>
+                    <span id="stat-total-events" class="stat-number">0</span>
+                </div>
+            </div>
+
+            <div class="admin-search-wrapper">
+                <input type="text" id="admin-search-input" placeholder="Поиск пользователя по имени или @логину..." oninput="filterAdminUsers()">
+            </div>
+
+            <div id="admin-data-container" class="admin-users-list"></div>
+        </div>
     </div>
-</div>
-    <script src="script.js"></script>
 
+    <script type="module" src="script.js"></script>
 </body>
 </html>

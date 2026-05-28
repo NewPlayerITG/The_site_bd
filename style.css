@@ -186,7 +186,7 @@ p { margin: 0; font-size: 22px; color: #C2D6C8; font-weight: 500; }
 
 /* Многодневный календарь */
 .day-cell.in-range { background-color: #437050; color: #FAF0A5; }
-.day-cell.confirmed { background-color: #D81B60; color: #FAFAFA; font-weight: 700; box-shadow: 0 0 10px rgba(216, 27, 96, 0.6); border: 1px solid #FAFAFA;}
+.day-cell.confirmed { background-color: #4CAF50 !important; color: white; font-weight: 700; box-shadow: 0 0 10px rgba(76, 175, 80, 0.6); border: 1px solid #FAFAFA; }
 
 /* АДАПТИВНОСТЬ */
 @media (max-width: 1024px) {
@@ -202,10 +202,7 @@ p { margin: 0; font-size: 22px; color: #C2D6C8; font-weight: 500; }
     .flower-modal-info { width: 100%; padding: 20px; gap: 15px; }
     .flower-modal-title { font-size: 24px; }
 }
-.admin-user-card { background: #222; padding: 15px; margin-bottom: 10px; border-radius: 8px; color: #fff; }
-.admin-event-date { font-weight: bold; color: #ffcc00; margin-top: 5px; }
-.admin-event-item { margin-left: 15px; border-bottom: 1px solid #444; }
-.day-cell.confirmed { background-color: #4CAF50 !important; color: white; }
+
 /* Контейнер панели */
 .admin-dashboard {
     max-width: 700px;
@@ -291,6 +288,7 @@ p { margin: 0; font-size: 22px; color: #C2D6C8; font-weight: 500; }
     padding: 16px;
     margin-bottom: 14px;
     transition: transform 0.2s;
+    position: relative;
 }
 .admin-user-card:hover {
     transform: translateY(-2px);
@@ -301,6 +299,7 @@ p { margin: 0; font-size: 22px; color: #C2D6C8; font-weight: 500; }
     color: #FAF0A5;
     font-weight: bold;
     margin-bottom: 12px;
+    padding-right: 80px;
 }
 
 .admin-user-info span {
@@ -335,4 +334,21 @@ p { margin: 0; font-size: 22px; color: #C2D6C8; font-weight: 500; }
     color: #4e6355;
     font-style: italic;
     font-size: 14px;
+}
+
+.btn-delete-user {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #8E3B3B;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+}
+.btn-delete-user:hover {
+    background: #b24a4a;
 }
