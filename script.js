@@ -5,7 +5,14 @@ import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebase
 import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 
 const firebaseConfig = {
-    // ваши ключи...
+  apiKey: "AIzaSyDDVztUxNE1qlfwZBOvDdn8fkyEDz8zUdU",
+  authDomain: "my-calendar-db.firebaseapp.com",
+  databaseURL: "https://my-calendar-db-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "my-calendar-db",
+  storageBucket: "my-calendar-db.firebasestorage.app",
+  messagingSenderId: "363953092541",
+  appId: "1:363953092541:web:a03a7566e6a939a1a144d4",
+  measurementId: "G-KZQ58XP264"
 };
 
 const app = initializeApp(firebaseConfig);
