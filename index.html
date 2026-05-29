@@ -23,21 +23,21 @@
     <div id="screen-main" class="screen">
         <div class="header">
             <h1 class="greeting">Доброго времени суток</h1>
-            <p>What бы вы хотели сегодня выбрать?</p>
+            <p>Что бы вы хотели сегодня выбрать?</p>
         </div>
         <div class="buttons">
-            <button onclick="navigate('screen-fun')">Развлечения</button>
-            <button onclick="navigate('screen-food')">Еда</button>
-            <button onclick="navigate('screen-gifts')">Подарки</button>
+            <button type="button" onclick="navigate('screen-fun')">Развлечения</button>
+            <button type="button" onclick="navigate('screen-food')">Еда</button>
+            <button type="button" onclick="navigate('screen-gifts')">Подарки</button>
         </div>
     </div>
 
     <div id="screen-fun" class="screen hidden">
         <div class="header"><h1>Куда идем?</h1></div>
         <div class="buttons">
-            <button onclick="navigate('screen-walk')">Гулять</button>
-            <button onclick="navigate('screen-malls')">Ходить по торговому центру</button>
-            <button onclick="navigate('screen-trips')">Поехали!</button>
+            <button type="button" onclick="navigate('screen-walk')">Гулять</button>
+            <button type="button" onclick="navigate('screen-malls')">Ходить по торговому центру</button>
+            <button type="button" onclick="navigate('screen-trips')">Поехали!</button>
         </div>
     </div>
 
@@ -59,12 +59,12 @@
     <div id="screen-food" class="screen hidden">
         <div class="header"><h1>Какую кухню вы хотите сегодня?</h1></div>
         <div class="buttons">
-            <button onclick="openFoodCategory('Кавказская')">Кавказская</button>
-            <button onclick="openFoodCategory('Русская')">Русская</button>
-            <button onclick="openFoodCategory('Японская')">Японская</button>
-            <button onclick="openFoodCategory('Итальянская')">Итальянская</button>
-            <button onclick="openFoodCategory('Американская')">Американская</button>
-            <button onclick="openFoodCategory('Рыбная')">Рыбная</button>
+            <button type="button" onclick="openFoodCategory('Кавказская')">Кавказская</button>
+            <button type="button" onclick="openFoodCategory('Русская')">Русская</button>
+            <button type="button" onclick="openFoodCategory('Японская')">Японская</button>
+            <button type="button" onclick="openFoodCategory('Итальянская')">Итальянская</button>
+            <button type="button" onclick="openFoodCategory('Американская')">Американская</button>
+            <button type="button" onclick="openFoodCategory('Рыбная')">Рыбная</button>
         </div>
     </div>
 
@@ -76,10 +76,10 @@
     <div id="screen-gifts" class="screen hidden">
         <div class="header"><h1>Подарки</h1></div>
         <div class="buttons">
-            <button onclick="openFlowersSection()">Цветы</button>
-            <button onclick="navigate('screen-finish')">Игрушки</button>
-            <button onclick="navigate('screen-finish')">Билеты</button>
-            <button onclick="navigate('screen-finish')">Другое</button>
+            <button type="button" onclick="openFlowersSection()">Цветы</button>
+            <button type="button" onclick="navigate('screen-finish')">Игрушки</button>
+            <button type="button" onclick="navigate('screen-finish')">Билеты</button>
+            <button type="button" onclick="navigate('screen-finish')">Другое</button>
         </div>
     </div>
 
@@ -93,12 +93,12 @@
     <div id="screen-finish" class="screen hidden">
         <div class="header"><h1>Приносим свои извинения. Идет ремонт 🚧</h1></div>
         <div class="buttons">
-            <button id="btn-choose-date" onclick="openCalendar('edit')">Выбрать дату</button>
+            <button type="button" id="btn-choose-date" onclick="openCalendar('edit')">Выбрать дату</button>
         </div>
     </div>
 
-    <button id="btn-back" class="hidden" onclick="goBack()">Назад</button>
-    <button id="btn-calendar" onclick="openCalendar('view')">📅</button>
+    <button type="button" id="btn-back" class="hidden" onclick="goBack()">Назад</button>
+    <button type="button" id="btn-calendar" onclick="openCalendar('view')">📅</button>
 
     <div id="auth-modal" class="modal-overlay hidden" onclick="closeAuthOverlay(event)">
         <div id="auth-view-login" class="modal-content auth-box hidden">
@@ -118,25 +118,25 @@
                 <input type="text" id="reg-name" class="auth-input" placeholder="Как к вам обращаться?">
             </div>
             <div class="auth-footer-row spaced">
-                <button class="btn-secondary" onclick="switchAuthView('login')">Назад</button>
-                <button class="btn-primary" onclick="handleRegisterSubmit()">Сохранить</button>
+                <button type="button" class="btn-secondary" onclick="switchAuthView('login')">Назад</button>
+                <button type="button" class="btn-primary" onclick="handleRegisterSubmit()">Сохранить</button>
             </div>
         </div>
         <div id="auth-view-profile" class="modal-content auth-box hidden">
             <div class="auth-title" id="profile-greeting">Привет!</div>
             <p style="font-size: 14px; color: #7D9C87; text-align: center; margin-bottom: 20px;">Вы авторизованы.</p>
-            <button id="btn-admin-panel-link" class="btn-secondary hidden" onclick="openAdminPanel()" style="width: 100%; margin-bottom: 10px; background-color: #FAF0A5; color: #0A170F;">Панель администратора</button>
-            <button class="btn-primary" onclick="openCalendar('view')" style="width: 100%; margin-bottom: 10px;">Посмотреть планы</button>
-            <button class="btn-danger" onclick="handleLogout()" style="width: 100%;">Выйти</button>
+            <button type="button" id="btn-admin-panel-link" class="btn-secondary hidden" onclick="openAdminPanel()" style="width: 100%; margin-bottom: 10px; background-color: #FAF0A5; color: #0A170F;">Панель администратора</button>
+            <button type="button" class="btn-primary" onclick="openCalendar('view')" style="width: 100%; margin-bottom: 10px;">Посмотреть планы</button>
+            <button type="button" class="btn-danger" onclick="handleLogout()" style="width: 100%;">Выйти</button>
         </div>
     </div>
 
     <div id="calendar-modal" class="modal-overlay hidden" onclick="closeCalendarOverlay(event)">
         <div class="modal-content">
             <div class="calendar-header">
-                <button onclick="changeMonth(-1)">‹</button>
+                <button type="button" onclick="changeMonth(-1)">‹</button>
                 <span id="calendar-month-year"></span>
-                <button onclick="changeMonth(1)">›</button>
+                <button type="button" onclick="changeMonth(1)">›</button>
             </div>
             <div class="calendar-weekdays">
                 <div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div>
@@ -166,8 +166,8 @@
                     </div>
                 </div>
                 <div class="calendar-footer">
-                    <button id="btn-reset-date" onclick="resetDateSelection()">Очистить</button>
-                    <button type="button" class="btn-primary" onclick="saveDateSelection()">Сохранить</button>
+                    <button type="button" id="btn-reset-date" onclick="resetDateSelection()">Очистить</button>
+                    <button type="button" id="btn-save-date" class="btn-primary" onclick="saveDateSelection()">Сохранить</button>
                 </div>
             </div>
         </div>
@@ -185,7 +185,7 @@
                     <p>Выберите оттенок:</p>
                     <div id="flower-color-palette" class="color-palette"></div>
                 </div>
-                <button class="btn-large-action" onclick="chooseFlowerAndGoToDate()">Выбрать</button>
+                <button type="button" class="btn-large-action" onclick="chooseFlowerAndGoToDate()">Выбрать</button>
             </div>
         </div>
     </div>
@@ -198,7 +198,7 @@
                     <h2 id="trip-title" class="flower-modal-title">Название</h2>
                     <p id="trip-desc" class="flower-modal-text">Описание достопримечательностей...</p>
                 </div>
-                <button class="btn-large-action" onclick="openMultiCalendar()">Выбрать даты</button>
+                <button type="button" class="btn-large-action" onclick="openMultiCalendar()">Выбрать даты</button>
             </div>
         </div>
     </div>
@@ -214,8 +214,8 @@
             <div id="multi-calendar-grid" class="calendar-days"></div>
             
             <div class="calendar-footer" style="margin-top:20px;">
-                <button class="btn-secondary" onclick="closeModal('multi-calendar-modal')">Отмена</button>
-                <button id="btn-save-multi-date" class="btn-primary" onclick="confirmMultiDateSelection()">Подтвердить</button>
+                <button type="button" class="btn-secondary" onclick="closeModal('multi-calendar-modal')">Отмена</button>
+                <button type="button" id="btn-save-multi-date" class="btn-primary" onclick="confirmMultiDateSelection()">Подтвердить</button>
             </div>
         </div>
     </div>
