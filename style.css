@@ -1,3 +1,569 @@
+<<<<<<< HEAD
+/* ======= ОБЩИЕ СТИЛИ ПРИЛОЖЕНИЯ ======= */
+
+/* Настройка скроллбара (бегунка) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #101A14; 
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #4A7A5D; 
+    border-radius: 8px;
+    border: 2px solid #101A14;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #95B5A1; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #101A14; 
+    color: #E4E8E5;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Экранные контейнеры и центрирование */
+.screen {
+    width: 100%;
+    max-width: 600px; /* Увеличено для лучшего отображения */
+    min-height: 100vh; /* Занимает всю высоту экрана */
+    padding: 30px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрирование по вертикали */
+    align-items: center; /* Центрирование по горизонтали */
+}
+
+.content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.header, .header-gallery {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1, .header-gallery h1 {
+    font-size: 28px;
+    color: #E8E0A5; 
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.header p {
+    color: #95B5A1;
+    font-size: 16px;
+}
+
+/* Кнопки */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+}
+
+.buttons button, .trip-main-btn, .btn-large-action {
+    display: block;
+    width: 100%;
+    max-width: 340px; 
+    background: #1C2D23; 
+    color: #E8E0A5;
+    border: 1px solid #2B4535;
+    padding: 18px 20px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.buttons button:hover, .trip-main-btn:hover, .btn-large-action:hover {
+    background: #253D30;
+    border-color: #3F634D;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* Уведомления (Toast) */
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: #253D30;
+    color: #E8E0A5;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 10000;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #3F634D;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.toast-notification.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Профиль и плавающие кнопки управления */
+#btn-profile {
+    position: fixed; /* Закреплен вверху */
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    z-index: 10;
+    transition: opacity 0.2s;
+}
+
+#btn-profile:hover { opacity: 0.8; }
+
+#profile-label {
+    color: #95B5A1;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#btn-back {
+    position: fixed;
+    bottom: 25px;
+    left: 20px;
+    background: #1C2D23;
+    border: 1px solid #2B4535;
+    color: #E8E0A5;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.2s ease;
+}
+
+#btn-back:hover { background: #253D30; }
+
+#btn-calendar {
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    background: #4A7A5D;
+    border: none;
+    font-size: 22px;
+    padding: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+}
+
+#btn-calendar:hover { transform: scale(1.1); }
+
+/* Списки контента (Парки, ТЦ, Рестораны) */
+.scrollable-list {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1C2D23;
+    border: 1px solid #2B4535;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 16px;
+    gap: 12px;
+    width: 100%;
+    max-width: 440px;
+    box-sizing: border-box;
+}
+
+.name-btn, .mall-name-btn {
+    background: none;
+    border: none;
+    color: #E4E8E5;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    flex-grow: 1;
+}
+
+.mall-title {
+    color: #E8E0A5;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.mall-address {
+    font-size: 12px;
+    color: #95B5A1;
+    margin-top: 6px;
+    display: block;
+}
+
+.choose-btn {
+    background: #4A7A5D;
+    border: none;
+    color: #FFFFFF;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+}
+.choose-btn:hover { background: #5a9170; }
+
+/* ======= МОДАЛЬНЫЕ ОКНА ======= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 18, 13, 0.85);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #16241B;
+    border: 1px solid #2B4535;
+    border-radius: 24px;
+    padding: 28px;
+    width: 90%;
+    max-width: 400px;
+    box-sizing: border-box;
+    color: #E4E8E5;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+}
+
+.auth-box { display: flex; flex-direction: column; }
+.auth-title { font-size: 22px; font-weight: 700; color: #E8E0A5; text-align: center; margin-bottom: 24px; }
+.auth-stack { display: flex; flex-direction: column; }
+
+.auth-input {
+    background: #101A14;
+    border: 1px solid #2B4535;
+    padding: 16px;
+    border-radius: 12px;
+    color: #E4E8E5;
+    margin-bottom: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+.auth-input:focus { border-color: #4A7A5D; }
+
+.auth-footer-row { display: flex; gap: 12px; justify-content: flex-end; margin-top: 10px; }
+.auth-footer-row.spaced { justify-content: space-between; }
+
+.btn-primary {
+    background: #4A7A5D !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+.btn-primary:hover { background: #5a9170 !important; }
+
+.btn-secondary {
+    background: #1C2D23 !important;
+    color: #E8E0A5 !important;
+    border: 1px solid #2B4535 !important;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-danger {
+    background: #8E3B3B !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* ======= КАЛЕНДАРЬ ======= */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #E8E0A5;
+    font-size: 18px;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    color: #95B5A1;
+    font-size: 26px;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 600;
+    color: #95B5A1;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+}
+
+.calendar-days div {
+    padding: 12px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.calendar-days div:hover:not(.empty) { background: #253D30; }
+.calendar-days .empty { cursor: default; background: none !important; }
+
+.saved-date {
+    background: #2B4535;
+    color: #E8E0A5;
+    border: 1px solid #4A7A5D;
+}
+
+.selected-date {
+    background: #4A7A5D !important;
+    color: #FFFFFF !important;
+    font-weight: 700;
+    transform: scale(1.05);
+}
+
+.in-range {
+    background: rgba(74, 122, 93, 0.25) !important;
+    color: #E8E0A5;
+}
+
+.modal-divider { height: 1px; background: #2B4535; margin: 20px 0; }
+
+.calendar-footer { display: flex; gap: 10px; margin-top: 15px; }
+
+/* ВРЕМЯ (Числовой ввод) */
+.time-picker-title { text-align: center; font-size: 14px; color: #95B5A1; margin-bottom: 16px; }
+.time-picker-container { display: flex; justify-content: center; align-items: center; gap: 20px; margin: 10px 0 25px 0; }
+.time-wheel-wrapper { display: flex; flex-direction: column; align-items: center; }
+
+.time-wheel-separator { font-size: 36px; font-weight: 700; color: #E8E0A5; margin-bottom: 5px; }
+
+.wheel-input-visible {
+    background: #101A14;
+    color: #E8E0A5;
+    border: 1px solid #2B4535;
+    border-radius: 12px;
+    width: 80px;
+    height: 60px;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.wheel-input-visible:focus {
+    border-color: #4A7A5D;
+    box-shadow: 0 0 10px rgba(74, 122, 93, 0.3);
+}
+
+/* ======= ПОДАРКИ (ГАЛЕРЕЯ ЦВЕТОВ) ======= */
+.gallery-wrapper {
+    max-height: 75vh;
+    overflow-y: auto;
+    padding: 10px;
+    width: 100%;
+}
+
+.gallery-grid {
+    display: grid;
+    /* Сетка 5 колонок */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.flower-card {
+    background-color: #1C2D23;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #2B4535;
+    border-radius: 20px;
+    height: 240px; /* Увеличен размер карточки */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flower-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+}
+
+.flower-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(10,24,16,0.95) 0%, rgba(10,24,16,0) 100%);
+    padding: 40px 16px 16px 16px;
+    box-sizing: border-box;
+}
+
+.flower-overlay h3 { margin: 0; font-size: 16px; color: #E8E0A5; font-weight: 700;}
+.flower-overlay p { margin: 6px 0 0 0; font-size: 13px; color: #95B5A1; }
+
+.flower-modal-content {
+    background: #16241B;
+    border: 1px solid #2B4535;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 480px;
+    overflow: hidden;
+    color: #E4E8E5;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+}
+
+.flower-modal-image {
+    width: 100%;
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    background-color: #101A14;
+}
+
+.flower-modal-info { padding: 28px; }
+.flower-modal-title { color: #E8E0A5; margin-top: 0; font-size: 26px; font-weight: 700; }
+.flower-modal-text { color: #C1D1C1; font-size: 15px; line-height: 1.6; }
+
+.flower-colors-container { margin: 24px 0; }
+.flower-colors-container p { margin: 0 0 12px 0; font-size: 14px; color: #95B5A1; }
+.color-palette { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.color-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s, border-color 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.color-box.selected { border-color: #E8E0A5; transform: scale(1.15); }
+
+/* ======= АДМИН-ПАНЕЛЬ ======= */
+.admin-dashboard { max-width: 600px !important; max-height: 85vh; overflow-y: auto; }
+.admin-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2B4535; padding-bottom: 16px; margin-bottom: 24px; }
+.admin-header h2 { color: #E8E0A5; font-size: 20px; margin: 0; }
+.close-btn { font-size: 28px; cursor: pointer; color: #95B5A1; }
+
+.admin-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 24px; }
+.admin-stat-card { background: #101A14; border: 1px solid #2B4535; padding: 20px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; }
+.stat-label { font-size: 13px; color: #95B5A1; text-align: center; margin-bottom: 8px; }
+.stat-number { font-size: 32px; font-weight: 700; color: #E8E0A5; }
+
+.admin-search-wrapper input {
+    width: 100%;
+    background: #101A14;
+    border: 1px solid #2B4535;
+    padding: 16px;
+    border-radius: 12px;
+    color: #E4E8E5;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+.admin-search-wrapper input:focus { border-color: #4A7A5D; }
+
+.admin-users-list { max-height: 40vh; overflow-y: auto; padding-right: 10px; }
+.admin-user-card { background: #1C2D23; border: 1px solid #2B4535; padding: 20px; border-radius: 16px; margin-bottom: 16px; position: relative; }
+.admin-date-group { margin-top: 14px; border-left: 3px solid #4A7A5D; padding-left: 12px; }
+.admin-date-title { font-size: 14px; color: #E8E0A5; font-weight: 600; }
+.admin-event-bullet { font-size: 13px; color: #C1D1C1; margin-top: 5px; }
+
+/* Адаптив для маленьких экранов (чтобы на телефоне не было каши из 5 колонок) */
+@media (max-width: 1024px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+=======
 /* Основные настройки */
 body {
     background-color: #0A170F;
@@ -351,4 +917,5 @@ p { margin: 0; font-size: 22px; color: #C2D6C8; font-weight: 500; }
 }
 .btn-delete-user:hover {
     background: #b24a4a;
+>>>>>>> 1351efdc6efa84cb9a56cdf955bbf08d19b25d60
 }

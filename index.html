@@ -6,7 +6,7 @@
     <title>Выбор досуга</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,12 +15,24 @@
 
     <button id="btn-profile" onclick="openAuthModal()">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="#7D9C87"/>
+            <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="#95B5A1"/>
         </svg>
         <span id="profile-label" class="hidden"></span>
     </button>
 
     <div id="screen-main" class="screen">
+<<<<<<< HEAD
+        <div class="content-wrapper">
+            <div class="header">
+                <h1 class="greeting">Доброго времени суток</h1>
+                <p>Что бы вы хотели сегодня выбрать?</p>
+            </div>
+            <div class="buttons">
+                <button type="button" onclick="navigate('screen-fun')">Развлечения</button>
+                <button type="button" onclick="navigate('screen-food')">Еда</button>
+                <button type="button" onclick="navigate('screen-gifts')">Подарки</button>
+            </div>
+=======
         <div class="header">
             <h1 class="greeting">Доброго времени суток</h1>
             <p>Что бы вы хотели сегодня выбрать?</p>
@@ -29,34 +41,63 @@
             <button type="button" onclick="navigate('screen-fun')">Развлечения</button>
             <button type="button" onclick="navigate('screen-food')">Еда</button>
             <button type="button" onclick="navigate('screen-gifts')">Подарки</button>
+>>>>>>> 1351efdc6efa84cb9a56cdf955bbf08d19b25d60
         </div>
     </div>
 
     <div id="screen-fun" class="screen hidden">
+<<<<<<< HEAD
+        <div class="content-wrapper">
+            <div class="header"><h1>Куда идем?</h1></div>
+            <div class="buttons">
+                <button type="button" onclick="navigate('screen-walk')">Гулять</button>
+                <button type="button" onclick="navigate('screen-malls')">Торговые центры</button>
+                <button type="button" onclick="navigate('screen-trips')">Поехали!</button>
+            </div>
+=======
         <div class="header"><h1>Куда идем?</h1></div>
         <div class="buttons">
             <button type="button" onclick="navigate('screen-walk')">Гулять</button>
             <button type="button" onclick="navigate('screen-malls')">Ходить по торговому центру</button>
             <button type="button" onclick="navigate('screen-trips')">Поехали!</button>
+>>>>>>> 1351efdc6efa84cb9a56cdf955bbf08d19b25d60
         </div>
     </div>
 
     <div id="screen-walk" class="screen hidden">
-        <div class="header"><h1>Парки и улицы</h1></div>
-        <div class="scrollable-list" id="walk-container"></div>
+        <div class="content-wrapper">
+            <div class="header"><h1>Парки и улицы</h1></div>
+            <div class="scrollable-list" id="walk-container"></div>
+        </div>
     </div>
 
     <div id="screen-malls" class="screen hidden">
-        <div class="header"><h1>Торговые центры</h1></div>
-        <div class="scrollable-list" id="malls-container"></div>
+        <div class="content-wrapper">
+            <div class="header"><h1>Торговые центры</h1></div>
+            <div class="scrollable-list" id="malls-container"></div>
+        </div>
     </div>
 
     <div id="screen-trips" class="screen hidden">
-        <div class="header"><h1>Поехали!</h1></div>
-        <div class="trips-flex-center" id="trips-container"></div>
+        <div class="content-wrapper">
+            <div class="header"><h1>Поехали!</h1></div>
+            <div class="buttons" id="trips-container"></div>
+        </div>
     </div>
 
     <div id="screen-food" class="screen hidden">
+<<<<<<< HEAD
+        <div class="content-wrapper">
+            <div class="header"><h1>Какую кухню вы хотите?</h1></div>
+            <div class="buttons">
+                <button type="button" onclick="openFoodCategory('Кавказская')">Кавказская</button>
+                <button type="button" onclick="openFoodCategory('Русская')">Русская</button>
+                <button type="button" onclick="openFoodCategory('Японская')">Японская</button>
+                <button type="button" onclick="openFoodCategory('Итальянская')">Итальянская</button>
+                <button type="button" onclick="openFoodCategory('Американская')">Американская</button>
+                <button type="button" onclick="openFoodCategory('Рыбная')">Рыбная</button>
+            </div>
+=======
         <div class="header"><h1>Какую кухню вы хотите сегодня?</h1></div>
         <div class="buttons">
             <button type="button" onclick="openFoodCategory('Кавказская')">Кавказская</button>
@@ -65,10 +106,16 @@
             <button type="button" onclick="openFoodCategory('Итальянская')">Итальянская</button>
             <button type="button" onclick="openFoodCategory('Американская')">Американская</button>
             <button type="button" onclick="openFoodCategory('Рыбная')">Рыбная</button>
+>>>>>>> 1351efdc6efa84cb9a56cdf955bbf08d19b25d60
         </div>
     </div>
 
     <div id="screen-food-list" class="screen hidden">
+<<<<<<< HEAD
+        <div class="content-wrapper">
+            <div class="header"><h1 id="food-category-title">Рестораны</h1></div>
+            <div class="scrollable-list" id="food-list-container"></div>
+=======
         <div class="header"><h1 id="food-category-title">Рестораны</h1></div>
         <div class="scrollable-list" id="food-list-container"></div>
     </div>
@@ -80,20 +127,43 @@
             <button type="button" onclick="navigate('screen-finish')">Игрушки</button>
             <button type="button" onclick="navigate('screen-finish')">Билеты</button>
             <button type="button" onclick="navigate('screen-finish')">Другое</button>
+>>>>>>> 1351efdc6efa84cb9a56cdf955bbf08d19b25d60
         </div>
     </div>
 
-    <div id="screen-flowers" class="screen hidden">
-        <div class="header-gallery"><h1>Выберите цветы</h1></div>
-        <div class="gallery-wrapper">
-            <div id="flowers-gallery" class="gallery-grid"></div>
+    <div id="screen-gifts" class="screen hidden">
+        <div class="content-wrapper">
+            <div class="header"><h1>Подарки</h1></div>
+            <div class="buttons">
+                <button type="button" onclick="openFlowersSection()">Цветы</button>
+                <button type="button" onclick="navigate('screen-finish')">Игрушки</button>
+                <button type="button" onclick="navigate('screen-finish')">Билеты</button>
+                <button type="button" onclick="navigate('screen-finish')">Другое</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="screen-flowers" class="screen hidden" style="max-width: 1400px;">
+        <div class="content-wrapper" style="width: 100%;">
+            <div class="header-gallery"><h1>Выберите цветы</h1></div>
+            <div class="gallery-wrapper">
+                <div id="flowers-gallery" class="gallery-grid"></div>
+            </div>
         </div>
     </div>
 
     <div id="screen-finish" class="screen hidden">
+<<<<<<< HEAD
+        <div class="content-wrapper">
+            <div class="header"><h1>Приносим извинения. Идет ремонт 🚧</h1></div>
+            <div class="buttons">
+                <button type="button" id="btn-choose-date" onclick="openCalendar('edit')">Выбрать дату</button>
+            </div>
+=======
         <div class="header"><h1>Приносим свои извинения. Идет ремонт 🚧</h1></div>
         <div class="buttons">
             <button type="button" id="btn-choose-date" onclick="openCalendar('edit')">Выбрать дату</button>
+>>>>>>> 1351efdc6efa84cb9a56cdf955bbf08d19b25d60
         </div>
     </div>
 
@@ -106,7 +176,7 @@
             <input type="text" id="login-username" class="auth-input" placeholder="Логин">
             <input type="password" id="login-password" class="auth-input" placeholder="Пароль">
             <div class="auth-footer-row">
-                <button class="btn-secondary" onclick="switchAuthView('register')">Зарегистрироваться</button>
+                <button class="btn-secondary" onclick="switchAuthView('register')">Регистрация</button>
                 <button class="btn-primary" onclick="handleLoginSubmit()">Войти</button>
             </div>
         </div>
@@ -124,10 +194,19 @@
         </div>
         <div id="auth-view-profile" class="modal-content auth-box hidden">
             <div class="auth-title" id="profile-greeting">Привет!</div>
+<<<<<<< HEAD
+            <p style="font-size: 14px; color: #95B5A1; text-align: center; margin-bottom: 20px;">Вы авторизованы.</p>
+            <div class="buttons">
+                <button type="button" id="btn-admin-panel-link" class="btn-secondary hidden" onclick="openAdminPanel()" style="background-color: #E8E0A5; color: #101A14;">Панель администратора</button>
+                <button type="button" class="btn-primary" onclick="openCalendar('view')">Посмотреть планы</button>
+                <button type="button" class="btn-danger" onclick="handleLogout()">Выйти</button>
+            </div>
+=======
             <p style="font-size: 14px; color: #7D9C87; text-align: center; margin-bottom: 20px;">Вы авторизованы.</p>
             <button type="button" id="btn-admin-panel-link" class="btn-secondary hidden" onclick="openAdminPanel()" style="width: 100%; margin-bottom: 10px; background-color: #FAF0A5; color: #0A170F;">Панель администратора</button>
             <button type="button" class="btn-primary" onclick="openCalendar('view')" style="width: 100%; margin-bottom: 10px;">Посмотреть планы</button>
             <button type="button" class="btn-danger" onclick="handleLogout()" style="width: 100%;">Выйти</button>
+>>>>>>> 1351efdc6efa84cb9a56cdf955bbf08d19b25d60
         </div>
     </div>
 
@@ -147,26 +226,26 @@
                 <div id="event-details-text">Выберите день.</div>
             </div>
             <div id="calendar-edit-mode">
-                <div class="time-picker-title">Выберите время (кликните для ввода)</div>
+                <div class="time-picker-title">Укажите время</div>
                 <div class="time-picker-container">
                     <div class="time-wheel-wrapper">
-                        <div class="wheel-label">Часы</div>
                         <div class="wheel-relative-container">
-                            <div id="wheel-hours" class="time-wheel"></div>
-                            <input type="number" id="input-hours" class="wheel-input hidden" min="0" max="23">
+                            <input type="number" id="input-hours" class="wheel-input-visible" min="0" max="23" value="12" placeholder="00">
                         </div>
                     </div>
                     <div class="time-wheel-separator">:</div>
                     <div class="time-wheel-wrapper">
-                        <div class="wheel-label">Минуты</div>
                         <div class="wheel-relative-container">
-                            <div id="wheel-minutes" class="time-wheel"></div>
-                            <input type="number" id="input-minutes" class="wheel-input hidden" min="0" max="59">
+                            <input type="number" id="input-minutes" class="wheel-input-visible" min="0" max="59" value="00" placeholder="00">
                         </div>
                     </div>
                 </div>
                 <div class="calendar-footer">
+<<<<<<< HEAD
+                    <button type="button" id="btn-reset-date" class="btn-danger" style="padding: 10px 20px" onclick="resetDateSelection()">Удалить</button>
+=======
                     <button type="button" id="btn-reset-date" onclick="resetDateSelection()">Очистить</button>
+>>>>>>> 1351efdc6efa84cb9a56cdf955bbf08d19b25d60
                     <button type="button" id="btn-save-date" class="btn-primary" onclick="saveDateSelection()">Сохранить</button>
                 </div>
             </div>
@@ -175,7 +254,7 @@
 
     <div id="flower-modal" class="modal-overlay hidden" onclick="closeFlowerModal(event)">
         <div class="flower-modal-content" onclick="event.stopPropagation()">
-            <img id="flower-modal-img" src="" alt="Цветок" class="flower-modal-image">
+            <div id="flower-modal-img" class="flower-modal-image"></div>
             <div class="flower-modal-info">
                 <div class="flower-text-wrapper">
                     <h2 id="flower-modal-title" class="flower-modal-title">Название</h2>
@@ -185,28 +264,40 @@
                     <p>Выберите оттенок:</p>
                     <div id="flower-color-palette" class="color-palette"></div>
                 </div>
+<<<<<<< HEAD
+                <div class="buttons" style="margin-top: 20px;">
+                    <button type="button" class="btn-primary" onclick="chooseFlowerAndGoToDate()">Выбрать дату и время</button>
+                </div>
+=======
                 <button type="button" class="btn-large-action" onclick="chooseFlowerAndGoToDate()">Выбрать</button>
+>>>>>>> 1351efdc6efa84cb9a56cdf955bbf08d19b25d60
             </div>
         </div>
     </div>
 
     <div id="trip-info-modal" class="modal-overlay hidden" onclick="closeModal('trip-info-modal')">
         <div class="flower-modal-content" onclick="event.stopPropagation()">
-            <img id="trip-modal-img" src="" alt="Поездка" class="flower-modal-image">
+            <img id="trip-modal-img" src="" alt="Поездка" class="flower-modal-image" style="object-fit: cover;">
             <div class="flower-modal-info">
                 <div class="flower-text-wrapper">
                     <h2 id="trip-title" class="flower-modal-title">Название</h2>
                     <p id="trip-desc" class="flower-modal-text">Описание достопримечательностей...</p>
                 </div>
+<<<<<<< HEAD
+                <div class="buttons" style="margin-top: 20px;">
+                    <button type="button" class="btn-primary" onclick="openMultiCalendar()">Выбрать даты</button>
+                </div>
+=======
                 <button type="button" class="btn-large-action" onclick="openMultiCalendar()">Выбрать даты</button>
+>>>>>>> 1351efdc6efa84cb9a56cdf955bbf08d19b25d60
             </div>
         </div>
     </div>
 
     <div id="multi-calendar-modal" class="modal-overlay hidden" onclick="closeModal('multi-calendar-modal')">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <h2 style="text-align:center; color:#FAF0A5; margin-bottom:5px;">Даты поездки</h2>
-            <p style="text-align:center; color:#7D9C87; font-size:12px; margin-bottom:15px;">Выберите день заезда, затем день выезда (макс. 7 дней)</p>
+            <h2 style="text-align:center; color:#E8E0A5; margin-bottom:5px;">Даты поездки</h2>
+            <p style="text-align:center; color:#95B5A1; font-size:12px; margin-bottom:15px;">Выберите день заезда и выезда</p>
             
             <div class="calendar-weekdays" style="margin-bottom: 5px;">
                 <div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div>
@@ -223,23 +314,23 @@
     <div id="admin-modal" class="modal-overlay hidden" onclick="closeModal('admin-modal')">
         <div class="modal-content admin-dashboard" onclick="event.stopPropagation()">
             <div class="admin-header">
-                <h2>Панель управления администратора</h2>
+                <h2>Панель администратора</h2>
                 <span class="close-btn" onclick="closeModal('admin-modal')">&times;</span>
             </div>
             
             <div class="admin-stats-grid">
                 <div class="admin-stat-card">
-                    <span class="stat-label">Зарегистрировано пользователей</span>
+                    <span class="stat-label">Пользователей</span>
                     <span id="stat-total-users" class="stat-number">0</span>
                 </div>
                 <div class="admin-stat-card">
-                    <span class="stat-label">Всего запланировано событий</span>
+                    <span class="stat-label">Событий</span>
                     <span id="stat-total-events" class="stat-number">0</span>
                 </div>
             </div>
 
             <div class="admin-search-wrapper">
-                <input type="text" id="admin-search-input" placeholder="Поиск пользователя по имени или @логину..." oninput="filterAdminUsers()">
+                <input type="text" id="admin-search-input" placeholder="Поиск по логину или имени..." oninput="filterAdminUsers()">
             </div>
 
             <div id="admin-data-container" class="admin-users-list"></div>
